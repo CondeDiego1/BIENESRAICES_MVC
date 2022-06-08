@@ -48,8 +48,9 @@ class ActiveRecord{
             }
             
         }else{
-            $resultado = self::$db->query("INSERT INTO ". static::$tabla ."(" . join(',', array_keys($atributos)) . ")" . " VALUES ('" . join("','", array_values($atributos)) . "')");
-
+            $resultado = "INSERT INTO ". static::$tabla ."(" . join(',', array_keys($atributos)) . ")" . " VALUES ('" . join("','", array_values($atributos)) . "')";
+            //$resultado = self::$db->query("INSERT INTO ". static::$tabla ."(" . join(',', array_keys($atributos)) . ")" . " VALUES ('" . join("','", array_values($atributos)) . "')");
+            Debuguear($resultado);
         }
 
         return $resultado;
