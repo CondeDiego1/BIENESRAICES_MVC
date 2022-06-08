@@ -8,7 +8,6 @@ $dotenv->safeLoad();
 require 'funciones.php';
 require 'config/database.php';
 
-
 //Conectarnos a la base de datos
 $db = conexionBD();
 

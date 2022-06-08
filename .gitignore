@@ -6,7 +6,5 @@ e.html
 package.json
 package-lock.json
 .env
-.DS_Store
 cypress
 cypress.json
-vendor
