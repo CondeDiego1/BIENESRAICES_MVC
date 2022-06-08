@@ -48,7 +48,7 @@ class Router{
             //La URL existe y hay una función asociada
             call_user_func($fn, $this);
         } else{
-            //include __DIR__ . "/views/paginas/error.php";
+            include __DIR__ . "/views/paginas/error.php";
         }
     }
 
