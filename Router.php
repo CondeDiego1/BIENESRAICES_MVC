@@ -23,9 +23,9 @@ class Router{
         $rutas_protegidas = ['/admin','/propiedades/crear','/propiedades/actualizar','/propiedades/eliminar', '/vendedores/crear', '/vendedores/actualizar','/vendedores/eliminar'];
 
         if ($_SERVER['PATH_INFO']) {
-            $currentUrl = $_SERVER['PATH_INFO'] ?? '/';
+            $urlActual = $_SERVER['PATH_INFO'] ?? '/';
         } else {
-            $currentUrl = $_SERVER['REQUEST_URI'] === '' ? '/' : $_SERVER['REQUEST_URI'];
+            $urlActual = $_SERVER['REQUEST_URI'] === '' ? '/' : $_SERVER['REQUEST_URI'];
         }
         
         $metodo = $_SERVER['REQUEST_METHOD'];
