@@ -4,6 +4,8 @@ namespace Controllers;
 use MVC\Router;
 use Model\Propiedad;
 use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 
 class PaginasController{
 
@@ -64,8 +66,21 @@ class PaginasController{
             $contenido .= '<p>Disponibilidad: ' . $disponibilidad . '</p>';
             $contenido .= '</html>';
 
-            $mail->Body    = $contenido;
-            $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+            $mail->Body = "
+            <html>
+                <body style='width:500px; max-width:500px; margin:0 auto; font-family:Poppins,sans-serif; padding: 20px; background-color: #000000; color: #ffffff;'>
+                    <img style='max-width: 100%; width: 240px; margin-left: -1.2rem;' src='../public/build/img/logo.svg' alt='Logotipo'/>
+                    <h2 font-size='25px' font-weight='500' line-height='25px'>¡Gracias por ponerte en contacto!</h2>
+                    <p>Hola, " . ucfirst($respuestas['nombre']) . ", te pusiste en contacto por <span>". $respuestas['opciones'] . "</span> de un proyecto.</p>;
+                    <p>Correo: " . $respuestas['email'] . "</p>;
+                    <p>Telefono: " . $respuestas['telefono'] . "</p>;
+                    <p>Mensaje: " . $mensaje . "</p>;
+                    <p>". $opcion . ': ' . "$" . number_format(intval($respuestas['presupuesto']), 0, ",", ".") . "</p>;
+                    <p>Forma de contacto: " . ucfirst($respuestas['contacto']) . "</p>;
+                    <p>Disponibilidad: " . $disponibilidad . "</p>;
+                    <p>Te invitamos a estar pendiente a tu " . ucfirst($respuestas['contacto']) . "</p>;
+                </body>
+            </html>";
             
             //Enviar
             if($mail->send()){

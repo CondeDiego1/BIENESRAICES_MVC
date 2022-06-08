@@ -2,7 +2,7 @@
     <legend>Información General</legend>
     <div class="flex flex__perfil">
         <?php if($vendedor->fotoperfil !== "usuario.png" && $vendedor->fotoperfil !== ''){ ?>
-        <img src="/perfil/<?php echo ($vendedor->fotoperfil); ?>" id="fichero" alt="imagen propiedad"
+        <img src="/perfil/<?php echo ($vendedor->fotoperfil); ?>" id="fichero" alt="imagen vendedor"
             class="fotoperfil">
         <?php } else {?>
         <img src="/build/img/usuario.png" alt="imagen contacto" id="fichero" loading="lazy" class="fotoperfil">
