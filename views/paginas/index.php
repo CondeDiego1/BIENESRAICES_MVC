@@ -180,7 +180,7 @@
             <input name="contacto[contacto]" type="radio" value="telefono" id="contactar-telefono" class="contactar-telefono" required/>
             <label data-cy="forma-contacto" for="contactar-telefono" class="alinear-izquierda">Teléfono</label>
 
-            <input type="radio" value="email" id="contactar-email" class="contactar-email" required/>
+            <input name="contacto[contacto]" type="radio" value="email" id="contactar-email" class="contactar-email" required/>
             <label data-cy="forma-contacto" for="contactar-email" class="alinear-izquierda">Email</label>
           </div>
 
