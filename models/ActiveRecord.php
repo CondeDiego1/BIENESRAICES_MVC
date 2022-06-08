@@ -224,7 +224,7 @@ class ActiveRecord{
     
     public function setImagen($imagen){//Subida de archivos
         $id = $this->Id();
-        if(!is_null($this->id)) {
+        if(!is_null($id)) {
             $this->borrarImagen();
         }
 
