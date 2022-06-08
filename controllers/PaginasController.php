@@ -8,7 +8,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 class PaginasController{
 
     public static function index(Router $router){
-        //$propiedades = Propiedad::Consultalimite(3);
+        $propiedades = Propiedad::Consultalimite(3) ?? '';
         $header = true;
         $respuesta = null;
 
