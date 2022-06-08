@@ -17,19 +17,18 @@ class PaginasController{
 
             //Crear objeto de PHPMailer
             $mail = new PHPMailer();
-
-            //Configurar el protocolo SMTP
+            $mail->SMTPDebug = SMTP::DEBUG_OFF;
+            $mail->Mailer = "smtp";
             $mail->isSMTP();
-            $mail->Host = 'smtp.mailtrap.io';;
+            $mail->Host = $_ENV['MAIL_HOST'];
             $mail->SMTPAuth = true;
-            $mail->Port = 2525;
-            $mail->Username = '010606a6227c92';
-            $mail->Password = '26cb141bdbd4a0';
+            $mail->Username = $_ENV['MAIL_USER'];
+            $mail->Password = $_ENV['MAIL_PASSWORD'];
             $mail->SMTPSecure = 'tls'; //Encriptado, seguro
+            $mail->Port = $_ENV['MAIL_PORT'];
 
-            //Configurar email
-            $mail->setFrom('admin@bienesraices.com');
-            $mail->addAddress('admin@bienesraices.com', 'BienesRaices.com'); 
+            $mail->setFrom($_ENV['MAIL_USER']);
+            $mail->addAddress($respuestas['email']);
             $mail->isHTML(true);
             $mail->CharSet = 'UTF-8';
             $mail->Subject = 'Nuevo Mensaje';
