@@ -113,7 +113,7 @@ class VendedorController{
             $id = filter_var($_POST['cedula'], FILTER_VALIDATE_INT);
             $vendedores = Vendedor::ConsultaId($id);
             $respuesta = $vendedores->Eliminar();
-
+            
             if (!$tiempo) {
                 if ($respuesta) {
                     header('Location: /admin?resultado=3');

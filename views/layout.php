@@ -14,12 +14,6 @@ if ($tiempo) {
     $_SESSION = [];
     header('Location: /login');
 }
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    session_start(); 
-    $_SESSION = []; 
-    header('Location: /');
-}
 ?>
 
 <!DOCTYPE html>
@@ -55,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <li class="item">
                         <?php if ($auth) { ?>
                             <a class="centrado">
-                                <form method="POST" novalidate autocomplete="off">
+                                <form method="POST" novalidate autocomplete="off" action="logout">
                                     <input class="linea" type="submit" value="Cerrar Sesión"> 
                                 </form>
                             </a>

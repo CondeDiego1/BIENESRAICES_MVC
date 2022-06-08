@@ -48,9 +48,9 @@ class ActiveRecord{
             }
             
         }else{
-            $resultado = "INSERT INTO ". static::$tabla ."(" . join(',', array_keys($atributos)) . ")" . " VALUES ('" . join("','", array_values($atributos)) . "')";
-            //$resultado = self::$db->query("INSERT INTO ". static::$tabla ."(" . join(',', array_keys($atributos)) . ")" . " VALUES ('" . join("','", array_values($atributos)) . "')");
-            Debuguear($resultado);
+            //$resultado = "INSERT INTO ". static::$tabla ."(" . join(',', array_keys($atributos)) . ")" . " VALUES ('" . join("','", array_values($atributos)) . "')";
+            $resultado = self::$db->query("INSERT INTO ". static::$tabla ."(" . join(',', array_keys($atributos)) . ")" . " VALUES ('" . join("','", array_values($atributos)) . "')");
+            //Debuguear($resultado);
         }
 
         return $resultado;
@@ -139,7 +139,6 @@ class ActiveRecord{
         if(!is_null($id)){
             //$resultado = "DELETE FROM ". static::$tabla ." WHERE " . static::$columna . " = '" . self::$db->escape_string($id) . "'";
             $resultado = self::$db->query("DELETE FROM ". static::$tabla ." WHERE " . static::$columna . " = '" . self::$db->escape_string($id) . "'");
-            // Debuguear($resultado);
             if($resultado) {
                 $this->borrarImagen();
             }

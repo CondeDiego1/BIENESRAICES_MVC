@@ -33,8 +33,10 @@ class LoginController{
     }
 
     public static function logout(Router $router){
-        session_start();
-        $_SESSION = [];
-        header('Location: /');
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            session_start(); 
+            $_SESSION = []; 
+            header('Location: /');
+        }
     }
 }

@@ -36,7 +36,7 @@ $router->post('/', [PaginasController::class, 'index']);
 
 //Login
 $router->get('/login', [LoginController::class, 'login']);
-// $router->get('/logout', [LoginController::class, 'logout']);
+$router->post('/logout', [LoginController::class, 'logout']);
 $router->post('/login', [LoginController::class, 'login']);
 
 $router->comprobarRutas();
