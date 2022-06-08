@@ -1,6 +1,5 @@
 node_modules
 src
-vendor
 gulpfile.js
 e.html
 package.json
