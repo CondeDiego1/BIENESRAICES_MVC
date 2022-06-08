@@ -1,0 +1,22 @@
+{
+    "name": "diegoconde/bienesraices",
+    "description": "Creando un proyecto con POO",
+    "autoload": {
+        "psr-4": {
+            "Model\\": "./models",
+            "MVC\\": "./",
+            "Controllers\\": "./controllers"
+        }
+    },
+    "authors": [
+        {
+            "name": "Diego Conde",
+            "email": "diegoalejandrocondelopez@gmail.com"
+        }
+    ],
+    "require": {
+        "intervention/image": "^2.7",
+        "phpmailer/phpmailer": "^6.6",
+        "vlucas/phpdotenv": "^5.4"
+    }
+}
